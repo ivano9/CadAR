@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ivano9/CaldAr/issues"
   },
-  "homepage": "https://github.com/ivano9/CaldAr#readme"
+  "homepage": "https://github.com/ivano9/CaldAr#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
