@@ -1,11 +1,12 @@
 'use strict'
 
-import express from "express"
-import path from 'path'
-import { Router } from "express"
-import {
-  customersController
-} from path.join(__dirname, 'controllers')
+const express = require('express')
+const { customersController } = require('../controllers/customers')
 
+const router = express.Router()
 
-Router.get('/customers', customersController.getAllBuildings)
+router.route('/customers/individuals').get(customersController.getIndividualsCustomers)
+
+router.route('/customers/construction-companies').get(customersController.getConstructorsCustomers)
+
+module.exports = router
