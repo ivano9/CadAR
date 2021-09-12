@@ -1,0 +1,22 @@
+[
+  {
+    "_id": 1,
+    "first_name": "Pepita",
+    "last_name": "Tourville",
+    "email": "ptourville0@51.la",
+    "phone": "+56 (645) 426-4024",
+    "address": "07 Summer Ridge Alley",
+    "company_name": "Voonder",
+    "type": "constructor"
+  },
+  {
+    "_id": 2,
+    "first_name": "Jona",
+    "last_name": "Parato",
+    "email": "boomer0@35.ro",
+    "phone": "+56 (645) 422-3333",
+    "address": "82 Oroño",
+    "company_name": "Boomer",
+    "type": "individual"
+  }
+]
