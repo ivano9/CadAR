@@ -1,3 +1,5 @@
+global.__basedir = __dirname
+
 const express = require('express')
 const router = require('./routes')
 const app = express()
