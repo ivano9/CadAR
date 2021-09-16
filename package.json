@@ -3,14 +3,10 @@
   "version": "0.0.1",
   "description": "CadAR App",
   "main": "index.js",
-  "type": "module",
   "scripts": {
+    "dev": "nodemon index",
     "start": "node index",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://ivano9: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@github.com/ivano9/CaldAr.git"
   },
   "author": "Ivan Giovanazzi, Lucas Cabrera",
   "license": "MIT",
@@ -19,6 +15,11 @@
   },
   "homepage": "https://github.com/ivano9/CaldAr#readme",
   "dependencies": {
-    "express": "^4.17.1"
-  }
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "keywords": []
 }
