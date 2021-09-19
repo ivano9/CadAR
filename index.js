@@ -2,9 +2,11 @@ global.__basedir = __dirname
 
 const express = require('express')
 const router = require('./routes')
+require('./config/dbConnection')
+
 const app = express()
 
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 // Routes
