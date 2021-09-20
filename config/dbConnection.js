@@ -7,8 +7,6 @@ if (require('dotenv').config().error)
 
 const { MONGO_STR_CON } = process.env
 
-console.log(MONGO_STR_CON)
-
 const connect = async () => {
   try {
     await mongoose.connect(MONGO_STR_CON)
@@ -17,7 +15,6 @@ const connect = async () => {
     console.error(`Error was ocurred when tried to connect to mongodb... error: ${err}`)
   }
 }
-
 
 process.on('uncaughtException', err => {
   console.error('There was an uncaught error', err)

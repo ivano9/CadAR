@@ -1,25 +1,36 @@
 'use strict'
 
 const { Validator } = require('jsonschema')
-const fs = require('fs')
+const { customersModel } = require(__basedir + '/models')
 
-const list = (type) => {
+const Type = {
+  individual: 'individual',
+  constructor: 'constructor'
+}
+
+const list = async (type) => {
   const customers = readCustomers()
   switch (type) {
     case undefined:
-      return customers
+      return await customersModel.find()
       break
     case 'individual':
-      return customers.filter(customer => customer.type === 'individual')
+      return customers.filter(customer => customer.type === Type.individual)
       break
     case 'constructor':
-      return customers.filter(customer => customer.type === 'constructor')
+      return customers.filter(customer => customer.type === Type.constructor)
       break
     default:
       return 'Unimplemented type'
   }
 
 }
+
+const create = (data) => {
+    const customer = customersModel(data)
+    return customer.save()
+}
+
 
 const fetch = (id) => {
   const customers = readCustomers()
@@ -100,6 +111,7 @@ const validator = (data) => {
 
 module.exports = {
   list,
+  create,
   fetch,
   update,
   remove

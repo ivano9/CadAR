@@ -15,42 +15,51 @@ const getCustomers = (req, res) => {
       callFun(res, customersRepository.list(type))
       break
     default:
-      res.status(400).send({
+      res.status(400).json({
         message: 'Unimplemented operation',
-        error: 'not_found'
+        error: false
       })
   }
 }
 
+const createCustomer = (req, res) => {
+  const data = req.body
+  return callFun(res, customersRepository.create(data))
+}
+
 const getCustomerById = (req, res) => {
   const { id } = req.params
-  callFun(res, customersRepository.fetch(id))
+  return callFun(res, customersRepository.fetch(id))
 }
 
 const updateCustomer = (req, res) => {
   const { id } = req.params
   const data = req.body
-  callFun(res, customersRepository.update(id, data, res))
+  return callFun(res, customersRepository.update(id, data, res))
 }
 
 const removeCustomer = (req, res) => {
   const { id } = req.params
-  callFun(res, customersRepository.remove(id))
+  return callFun(res, customersRepository.remove(id))
 }
 
 // Private
-const callFun = (res, fun) => {
+const callFun = async (res, fun) => {
   try {
-    res.status(200).send(fun)
+    return res.status(201).json({
+      data: await fun,
+      error: false
+    })
   } catch (error) {
-    res.status(500).send({
-      message: 'Something was wrong when making the operating.',
-      error: error
+    return res.status(400).json({
+      message: error.message,
+      error: true
     })
   }
 }
 
 module.exports = {
+  createCustomer,
   getCustomers,
   getCustomerById,
   updateCustomer,
