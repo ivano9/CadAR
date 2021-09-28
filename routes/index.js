@@ -1,18 +1,24 @@
-'use strict'
+const epxress = require('express')
+const router = epxress.Router()
+const fs = require('fs')
 
-const express = require('express')
-const { customersController } = require(__basedir + '/controllers')
+const pathRouter = `${__dirname}`
 
-const router = express.Router()
+const removeExtension = (fileName) => {
+  return fileName.split('.').shift()
+}
 
-router.route('/customers').get(customersController.getCustomers)
+fs.readdirSync(pathRouter).filter((file) => {
+  const fileWithOutExt = removeExtension(file)
+  const skip = ['index'].includes(fileWithOutExt)
+  if (!skip) {
+    router.use(`/${fileWithOutExt}`, require(`./${fileWithOutExt}`))
+  }
+})
 
-router.route('/customers').post(customersController.createCustomer)
-
-router.route('/customers/:id').get(customersController.getCustomerById)
-
-router.route('/customers/:id').patch(customersController.updateCustomer)
-
-router.route('/customers/:id').delete(customersController.removeCustomer)
+router.get('*', (req, res) => {
+  res.status(404)
+  res.send({error: 'Not found'})
+})
 
 module.exports = router
