@@ -49,11 +49,10 @@ const customerSchema = new mongoose.Schema({
       message: '{VALUE} is not supported'
     },
     required: [true, 'Customer type is required']
-  },
-  created: {
-    type: Number,
-    default: Date.now
   }
+}, {
+  timestamps: true,
+  versionKey: false
 })
 
 module.exports = mongoose.model('Customers', customerSchema)

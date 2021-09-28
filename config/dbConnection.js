@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 if (require('dotenv').config().error)
   throw new Error('Error while setting the environments variables')
 
-const { MONGO_STR_CON } = process.env
+const {MONGO_STR_CON} = process.env
 
 const connect = async () => {
   try {
@@ -21,4 +21,4 @@ process.on('uncaughtException', err => {
   process.exit(1)
 })
 
-module.exports = connect()
+module.exports = {connect}
