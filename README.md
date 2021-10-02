@@ -4,6 +4,15 @@ This is a solution for the case of study of CaldAr
 
 ## Running the proyect
 
+This steps are compatibles over OS Unix based
+
+### Requirements
+
+* `nodejs 15` or above
+* `npm 7` or above
+
+### Execute
+
 1. Copy and paste on the terminal the next command:
 
 ```bash
@@ -12,7 +21,7 @@ This is a solution for the case of study of CaldAr
   npm install
 ```
 
-2. Configure the .env file
+2. Configure the `.env` file
 3. Run `npm run start` or on mode development `npm run dev`
 
 ## Contributors
