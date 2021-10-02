@@ -6,7 +6,7 @@ This is a solution for the case of study of CaldAr
 
 This steps are compatibles over OS Unix based
 
-### Requirements
+### Minimun requirements
 
 * `nodejs 15` or above
 * `npm 7` or above
@@ -23,6 +23,13 @@ This steps are compatibles over OS Unix based
 
 2. Configure the `.env` file
 3. Run `npm run start` or on mode development `npm run dev`
+4. The api are running on `http://localhost:3000/api/v1.0`
+
+## Resources
+
+* `/customers`
+* `/customers/:id`
+* `/customers?type=:category`
 
 ## Contributors
 
