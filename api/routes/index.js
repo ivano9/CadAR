@@ -4,9 +4,7 @@ const fs = require('fs')
 
 const pathRouter = `${__dirname}`
 
-const removeExtension = (fileName) => {
-  return fileName.split('.').shift()
-}
+const removeExtension = (fileName) => fileName.split('.').shift()
 
 fs.readdirSync(pathRouter).filter((file) => {
   const fileWithOutExt = removeExtension(file)

@@ -4,7 +4,7 @@
   "description": "CadAR App",
   "main": "app.js",
   "scripts": {
-    "dev": "node_modules/.bin/nodemon app",
+    "dev": "npx eslint . && node_modules/.bin/nodemon app",
     "start": "node app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,7 +21,8 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "eslint": "^7.32.0",
+    "nodemon": "^2.0.13"
   },
   "keywords": []
 }

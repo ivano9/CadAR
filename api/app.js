@@ -12,6 +12,7 @@ app.use('/api/v1.0', require('./routes'))
 
 connect()
 const PORT = process.env.PORT || 3000
-app.listen(PORT, () =>
-  console.log(`API running on http://localhost:${PORT}/api/v1.0`)
+app.listen(PORT, () => {
+    console.log(`API running on http://localhost:${PORT}/api/v1.0`)
+  }
 )
