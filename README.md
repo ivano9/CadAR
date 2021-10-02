@@ -1,10 +1,10 @@
-# CaldAr
+# CaldAr Api
 
-### CaldAr solution API
+This is a solution for the case of study of CaldAr
 
 ## Running the proyect
 
-1.
+1. Copy and paste on the terminal the next command:
 
 ```bash
   git clone https://github.com/ivano9/CaldAR.git && \
@@ -13,7 +13,7 @@
 ```
 
 2. Configure the .env file
-3. Run `npm run start`
+3. Run `npm run start` or on mode development `npm run dev`
 
 ## Contributors
 
@@ -26,5 +26,6 @@
   * `feature/add-mongoose`
   * `feature/get-all-customers`
   * `feature/crud-customers-to-mongo-atlas`
+  * `developmet`
 * Lucas Cabreras
 
