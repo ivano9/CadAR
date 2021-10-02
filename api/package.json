@@ -4,7 +4,7 @@
   "description": "CadAR App",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app",
+    "dev": "node_modules/.bin/nodemon app",
     "start": "node app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

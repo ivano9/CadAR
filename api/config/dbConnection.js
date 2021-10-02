@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose')
 
-if (require('dotenv').config().error)
+if (require('dotenv').config({path: __basedir + '/../.env'}).error)
   throw new Error('Error while setting the environments variables')
 
 const {MONGO_STR_CON} = process.env
