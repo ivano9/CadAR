@@ -43,6 +43,10 @@ Run the next command for populate the DB
 * `/customers/:id`
 * `/customers?type=:category`
 
+## Deployed on Heroku
+
+[CaldAR API](https://caldarapi.herokuapp.com/api/v1.0/customers)
+
 ## Contributors
 
 * Iván Giovanazzi Ordóñez
