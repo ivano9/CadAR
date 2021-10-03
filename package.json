@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "api/node_modules/.bin/nodemon app",
     "start": "node app",
-    "lint": "npx eslint api && npx prettier --check .",
+    "lint": "npx eslint api && npx prettier --check api",
     "seed": "node api/seed/seeds",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "api/node_modules/.bin/husky install"
