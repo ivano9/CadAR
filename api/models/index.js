@@ -1,5 +1,5 @@
 'use strict'
 
 module.exports = {
-  customersModel: require('./customersModel')
+  customersModel: require('./customersModel'),
 }

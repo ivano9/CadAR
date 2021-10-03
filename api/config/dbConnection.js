@@ -2,20 +2,22 @@
 
 const mongoose = require('mongoose')
 
-if (require('dotenv').config({path: __dirname + '/../../.env'}).error)
+if (require('dotenv').config({ path: __dirname + '/../../.env' }).error)
   throw new Error('Error while setting the environments variables')
 
-const {MONGO_STR_CON} = process.env
+const { MONGO_STR_CON } = process.env
 
 const connect = async () => {
   try {
     await mongoose.connect(MONGO_STR_CON, {
-      useNewUrlParser: true
-      , useUnifiedTopology: true
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     })
     console.log('Mongodb connected')
   } catch (err) {
-    console.error(`Error was ocurred when tried to connect to mongodb... error: ${err}`)
+    console.error(
+      `Error was ocurred when tried to connect to mongodb... error: ${err}`
+    )
   }
 }
 
@@ -37,7 +39,7 @@ const dropCollection = async (collection) => {
   }
 }
 
-process.on('uncaughtException', err => {
+process.on('uncaughtException', (err) => {
   console.error('There was an uncaught error', err)
   process.exit(1)
 })
@@ -45,5 +47,5 @@ process.on('uncaughtException', err => {
 module.exports = {
   connect,
   disconnect,
-  dropCollection
+  dropCollection,
 }

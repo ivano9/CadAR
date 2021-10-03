@@ -3,11 +3,11 @@
 const express = require('express')
 const router = express.Router()
 const {
-  createCustomer
-  , getCustomers
-  , getCustomerById
-  , updateCustomer
-  , removeCustomer
+  createCustomer,
+  getCustomers,
+  getCustomerById,
+  updateCustomer,
+  removeCustomer,
 } = require('../controllers/customers')
 
 router.route('/').get(getCustomers)
