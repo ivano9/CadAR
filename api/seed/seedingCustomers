@@ -21,6 +21,7 @@ const seedCustomers = async () => {
     await connect()
     await dropCollection('customers')
     await customersModel.insertMany(buildSetOfCustomer())
+    console.log('Customers collection seeded! :)')
   } catch (err) {
     console.error(err.stack)
   } finally {
