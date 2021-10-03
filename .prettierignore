@@ -2,3 +2,5 @@
 coverage
 
 api/node_modules
+.eslintrc.js
+README.md
