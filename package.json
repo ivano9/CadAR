@@ -2,12 +2,14 @@
   "name": "caldar",
   "version": "0.0.1",
   "description": "CadAR App",
-  "main": "app.js",
+  "main": "api/app.js",
   "scripts": {
-    "dev": "npx eslint . && node_modules/.bin/nodemon app",
-    "start": "npx eslint . && node app",
-    "seed": "node seed/seeds",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "api/node_modules/.bin/nodemon app",
+    "start": "node app",
+    "lint": "npx eslint api && npx prettier --check .",
+    "seed": "node api/seed/seeds",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "api/node_modules/.bin/husky install"
   },
   "author": "Ivan Giovanazzi, Lucas Cabrera",
   "license": "MIT",
@@ -24,6 +26,7 @@
   "devDependencies": {
     "eslint": "^7.32.0",
     "faker": "^5.5.3",
+    "husky": "^7.0.2",
     "nodemon": "^2.0.13",
     "prettier": "^2.4.1"
   },
