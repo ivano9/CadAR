@@ -18,7 +18,7 @@ This steps are compatibles over OS Unix based
 ```bash
   git clone https://github.com/ivano9/CaldAR.git && \
   cd CaldAR && \
-  npm install -g --prefix ./api/node_modules
+  npm install
 ```
 
 2. Configure the `.env` file
