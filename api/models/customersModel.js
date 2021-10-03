@@ -36,8 +36,7 @@ const customerSchema = new mongoose.Schema({
   },
   company_name: {
     type: String,
-    required: [true, 'Customer company name is required'],
-    unique: true
+    required: [true, 'Customer company name is required']
   },
   state: String,
   country: String,

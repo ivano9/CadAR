@@ -10,7 +10,7 @@ const list = async (res, type) => {
     })
   }
 
-  const customers = await customersModel.findOne({type: type}).exec()
+  const customers = await customersModel.find({type: type}).exec()
   return res.status(200).json({
     data: !customers ? 'Customers not found' : customers,
     error: false

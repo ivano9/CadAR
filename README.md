@@ -17,13 +17,25 @@ This steps are compatibles over OS Unix based
 
 ```bash
   git clone https://github.com/ivano9/CaldAR.git && \
-  cd CaldAR && \
+  cd CaldAR/api && \
   npm install
 ```
 
 2. Configure the `.env` file
 3. Run `npm run start` or on mode development `npm run dev`
 4. The api are running on `http://localhost:3000/api/v1.0`
+
+### Seeding
+
+Collections to populate at the momment:
+
+* `Customers`
+
+Run the next command for populate the DB
+
+```bash
+  npm run seed
+```
 
 ## Resources
 

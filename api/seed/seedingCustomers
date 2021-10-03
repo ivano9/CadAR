@@ -1,0 +1,55 @@
+#!/usr/bin/env node
+
+const {customersModel} = require(__dirname + '/../models')
+const {
+  name,
+  internet,
+  address,
+  phone,
+  datatype,
+  company
+} = require('faker')
+const {
+  connect
+  , disconnect
+  , dropCollection
+} = require(__dirname + '/../config/dbConnection')
+
+
+const seedCustomers = async () => {
+  try {
+    await connect()
+    await dropCollection('customers')
+    await customersModel.insertMany(buildSetOfCustomer())
+  } catch (err) {
+    console.error(err.stack)
+  } finally {
+    await disconnect()
+  }
+}
+
+const buildSetOfCustomer = () => {
+  let customers = []
+  for (let i = 0; i < 1000; i++) {
+    let customer = {
+      first_name: name.firstName(),
+      last_name: name.lastName(),
+      street: address.streetAddress(),
+      city: address.cityName(),
+      email: internet.email(this.first_name, this.last_name),
+      phone: phone.phoneNumberFormat(),
+      company_name: company.companyName(),
+      state: address.state(),
+      country: address.country(),
+      is_active: datatype.boolean(),
+      type: choseRandomTypeCustomer()
+    }
+    customers.push(customer)
+  }
+  return customers
+}
+
+const choseRandomTypeCustomer = () => (Math.random() > 0.5) ? 'individual' : 'constructor'
+
+
+module.exports = seedCustomers
